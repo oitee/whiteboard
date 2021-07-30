@@ -44,8 +44,8 @@ function insertion(list, data, newData) {
     return newElement;
   }
   let target = targetMinusOne(list, data);
-  if(target == undefined){
-      return;
+  if (target == undefined) {
+    return;
   }
   newElement.next = target.next;
   target.next = newElement;
@@ -68,14 +68,12 @@ console.log("revised list(0,9): ");
 head2 = insertion(head2, 0, 9);
 printList(head2);
 
-
 console.log("original list: ");
 let head3 = listBuilder([1, 2, 3, 4, 5]);
 printList(head3);
 console.log("revised list(1,9): ");
 head3 = insertion(head3, 1, 9);
 printList(head3);
-
 
 console.log("original list: ");
 let head4 = listBuilder([1, 2, 3, 4, 5]);

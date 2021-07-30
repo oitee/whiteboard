@@ -33,9 +33,12 @@ Human.prototype = {
     date: "15thJuly2021",
     age : 0
 };
-console.log(Human.prototype);
-let human1 = new Human(88);
-console.log(human1);
+console.log("printing Human constructor's prototype properties: " + Human.prototype);
+let human1 = new Human(88);// creating a new object, AFTER defining Human's prototype object.
+console.log(human1); //output: Human { age: 88, weight: 0 }
+console.log(Human.prototype.isPrototypeOf(human1));// true
+console.log("checking if the prototype properties of human1 are printed: " + human1.name); //checking if the prototype properties of human1 are printed: b
+
 let human2 = new Human(9);
 console.log(human2);
 console.log(human1.constructor);//[Function: Human]
