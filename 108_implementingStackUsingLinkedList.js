@@ -42,3 +42,8 @@ s.push(9);
 console.log(s.peek());
 console.log(s.peek());
 console.log(s.peek());
+console.log(s.pop());
+console.log(s.pop());
+console.log(s.pop());
+console.log(s.pop());
+console.log(s.pop());
