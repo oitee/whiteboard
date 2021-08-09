@@ -1,7 +1,7 @@
 export function Queue(){
     this.arr = [];
     this.headIndex = 0;
-    this.tailIndex = 0;
+    this.tailIndex;
     this.isEmpty = function(){
         if(this.arr.length == 0){
             return true
@@ -9,8 +9,10 @@ export function Queue(){
         return this.headIndex > this.tailIndex;
     };
     this.enqueue = function(data){
-        if(this.tailIndex == 0){
+        if(this.tailIndex == undefined){
+            this.tailIndex = 0;
             this.arr[this.tailIndex] = data;
+            return data;
         }
         this.arr[++this.tailIndex] = data;
         return data;

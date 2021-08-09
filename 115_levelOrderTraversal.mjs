@@ -17,7 +17,7 @@ function levelOrderTraversal(root) {
   if (root == null) {
     return root;
   }
-  let visits = []; //visits is called
+  let visits = []; 
   visits.push(root.data);
   let levelNodes = [];
   levelNodes.push(root);
