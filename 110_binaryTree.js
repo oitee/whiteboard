@@ -1,4 +1,4 @@
-function BinaryTree(data) {
+export function BinaryTree(data) {
   this.data = data;
   this.left = null;
   this.right = null;
@@ -28,8 +28,11 @@ function inOrderTraversal(root, printArr = []) {
   inOrderTraversal(root.right, printArr);
 }
 
-printInOrderTraversal = printTraversal(inOrderTraversal);
+function testPrintInOrderTraversal(){
+let printInOrderTraversal = printTraversal(inOrderTraversal);
 printInOrderTraversal(root);
+}
+//testPrintInOrderTraversal();
 
 function preOrderTraversal(root, printArr = []) {
   if (root == null) {
@@ -39,8 +42,12 @@ function preOrderTraversal(root, printArr = []) {
   preOrderTraversal(root.left, printArr);
   preOrderTraversal(root.right, printArr);
 }
-printPreOrder = printTraversal(preOrderTraversal);
+
+function testPrintPreOrder(){
+let printPreOrder = printTraversal(preOrderTraversal);
 printPreOrder(root);
+}
+//testPrintPreOrder();
 
 function postOrderTraversal(root, printArr = []) {
   if (root == null) {
@@ -51,5 +58,8 @@ function postOrderTraversal(root, printArr = []) {
   printArr.push(root.data);
 }
 
-printPostOrder = printTraversal(postOrderTraversal);
-printPostOrder(root); 
+function testPrintPostOrder(){
+let printPostOrder = printTraversal(postOrderTraversal);
+printPostOrder(root);
+}
+//testPrintPostOrder(); 

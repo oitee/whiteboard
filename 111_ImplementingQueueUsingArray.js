@@ -32,6 +32,7 @@ export function Queue(){
     }
 }
 
+function test(){
 let q = new Queue();
 console.log(q.isEmpty() == true);
 console.log(q.peek() == "Queue is empty");
@@ -42,3 +43,5 @@ q.enqueue(3);
 console.log(q.dequeue() == 1);
 console.log(q.peek() == 3);
 console.log(q.isEmpty() == false);
+}
+//test();

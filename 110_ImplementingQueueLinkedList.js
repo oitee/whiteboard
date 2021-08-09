@@ -75,7 +75,7 @@ export function Queue() {
     return this.head.data;
   };
 }
-test();
+//test();
 function test() {
   let q = new Queue();
 

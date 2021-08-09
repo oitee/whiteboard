@@ -1,0 +1,20 @@
+{
+  "name": "whiteboard",
+  "version": "1.0.0",
+  "description": "This is my project with learning Javascript from [freecodecamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures#basic-javascript) and other online sources.",
+  "main": "01_first.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oitee/whiteboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oitee/whiteboard/issues"
+  },
+  "homepage": "https://github.com/oitee/whiteboard#readme",
+  "type": "module"
+}

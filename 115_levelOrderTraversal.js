@@ -1,4 +1,3 @@
-import * as queue from './110_ImplementingQueueLinkedList.mjs';
 function BinaryTree(data) {
   this.data = data;
   this.left = null;
@@ -43,9 +42,7 @@ function visitNextGen(currentGen, visits) {
   return nextGen;
 }
 
-
-let q = new queue.Queue();
-
-
-
+function test(){
 console.log(levelOrderTraversal(root).toString() === [7, 2, 8, 1, 5, 11, 30].toString());
+}
+//test();
