@@ -1,6 +1,6 @@
 import * as queue from './111_ImplementingQueueUsingArray.js';
 import { BinaryTree } from "./110_binaryTree.js";
-function levelOrderTraversal(root){
+export function levelOrderTraversal(root){
     let q = new queue.Queue();
     let arr = [];
     q.enqueue(root);
