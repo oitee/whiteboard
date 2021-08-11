@@ -19,7 +19,7 @@ function printBst(root) {
   console.log(printArr);
 }*/
 
-function arrayToBst(arr) {
+export function arrayToBst(arr) {
   let root = new BinaryTree(arr[0]);
   for (let i = 1; i < arr.length; i++) {
     insert(root, arr[i]);
@@ -61,8 +61,10 @@ function inOrderTraversal(root, printArr = []) {
   inOrderTraversal(root.right, printArr);
 }
 
-printInOrderTraversal = printTraversal(inOrderTraversal);
-
+let printInOrderTraversal = printTraversal(inOrderTraversal);
+function test(){
 let arr = [-881, 3, 4, 99, 100, 0, -111, 99, 1];
 let root1 = arrayToBst(arr);
 printInOrderTraversal(root1);
+}
+//test()
