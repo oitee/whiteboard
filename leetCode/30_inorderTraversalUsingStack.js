@@ -13,28 +13,7 @@ var inorderTraversal = function (root) {
   stackArr.push(root);
   let result = [];
   let visited = new Set();
-
   
-  /*while (stackArr.length > 0) {
-    let popped = stackArr.pop();
-    console.log(popped.val);
-    let leftNotEmpty = (popped.left != null);
-    let rightNotEmpty = (popped.right != null);
-    if (leftNotEmpty && !(visited.has(popped.left))) {
-      if (rightNotEmpty && !(visited.has(popped.right))) {
-        stackArr.push(popped.right);
-      }
-      stackArr.push(popped);
-      stackArr.push(popped.left);
-    } else {
-      result.push(popped.val);
-      visited.add(popped);
-      if (rightNotEmpty && !(visited.has(popped.right))) {
-        stackArr.push(popped.right);
-      }
-    }
-  }*/
-
   while (stackArr.length > 0){
     let peek = stackArr[stackArr.length - 1];  
     let leftNotEmpty = (peek.left != null);
