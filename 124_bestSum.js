@@ -31,3 +31,4 @@ function bestSum(targetSum, numbers, memo= {}){
 console.log(bestSum(7, [5, 3, 4, 7]));
 console.log(bestSum(8, [2, 3, 5]));
 console.log(bestSum(100, [1, 2, 11, 25]));
+//console.log();
