@@ -43,28 +43,13 @@ const condition4 = (digits) =>
  * @returns Boolean
  */
 const condition5 = (digits) => {
-  /**
-   * Returns true if there is a duplicate of
-   * a given element in an array
-   * @param {Array} arr
-   * @param {Number} givenIndex
-   * @returns Boolean
-   */
-  function hasDuplicates(arr, givenIndex) {
-    for (let i = 0; i < arr.length; i++) {
-      if (i !== givenIndex) {
-        if (arr[i] === arr[givenIndex]) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-
+  const seenDigits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   for (let i = 0; i < digits.length; i++) {
-    if (hasDuplicates(digits, i)) {
+    const currentDigit = digits[i];
+    if (seenDigits[currentDigit] > 0) {
       return true;
     }
+    seenDigits[i]++;
   }
   return false;
 };
@@ -80,11 +65,12 @@ const condition5 = (digits) => {
  * @returns function
  */
 function conditionBuilder(...conditions) {
-  return (n) => {
-    const digits = extractDigits(n);
-    return conditions.every((condition) => condition(digits));
-  };
+  return (digits) => conditions.every((condition) => condition(digits));
 }
+
+//======================================================================================
+// Passcode finder
+//======================================================================================
 
 /**
  * Given a number, returns a list of its digits
@@ -99,10 +85,6 @@ function extractDigits(num) {
   }
   return digits;
 }
-
-//======================================================================================
-// Passcode finder
-//======================================================================================
 
 /**
  * Given a condition and a range,
@@ -123,8 +105,10 @@ function extractDigits(num) {
  */
 function findPasscode(start, end, condition, stopAtFirst = true) {
   const results = [];
+
   for (let i = start; i <= end; i++) {
-    if (condition(i)) {
+    const digits = extractDigits(i);
+    if (condition(digits)) {
       if (stopAtFirst) {
         return i;
       } else {
@@ -138,11 +122,11 @@ function findPasscode(start, end, condition, stopAtFirst = true) {
   return null;
 }
 
-const masterCondition = conditionBuilder(
+const combinedCondition = conditionBuilder(
   condition1,
   condition2,
   condition3,
   condition4,
   condition5
 );
-console.log(findPasscode(10000, 99999, masterCondition, true));
+console.log(findPasscode(10000, 99999, combinedCondition, true));
