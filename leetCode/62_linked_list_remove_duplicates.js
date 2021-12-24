@@ -27,7 +27,7 @@ function removeDups(node) {
 }
 
 
-function buildLinkedList(arr){
+export function buildLinkedList(arr){
     const root = new Node(arr[0]);
     let node = root;
     for(let i = 1; i < arr.length; i++){
@@ -37,7 +37,7 @@ function buildLinkedList(arr){
     return root;
 }
 
-function printLinkedList(node, onlyData = true){
+export function printLinkedList(node, onlyData = true){
     console.log(`linked List beginning with ${node.data}`);
     while(node){
         if(onlyData){
@@ -52,5 +52,5 @@ function printLinkedList(node, onlyData = true){
 
 let list1 = buildLinkedList([1, 2, 2, 5, 2, 3, 4, 5, 5, 5]);
 removeDups(list1)
-printLinkedList(list1);
+// printLinkedList(list1);
 
